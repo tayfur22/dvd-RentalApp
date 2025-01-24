@@ -1,24 +1,27 @@
 package org.example.Entity;
 
+import java.sql.Date;
+import java.sql.Timestamp;
+
 public class Customer {
 
     private int customerId;
-    private Integer storeId;
+    private int storeId;
     private String firstName;
     private String lastName;
     private String email;
     private int addressId;
     private boolean activebool;
-    private String createDate;
-    private String lastUpdate;
+    private Date createDate;
+    private Timestamp lastUpdate;
     private int active;
 
 
-    public Customer(int customerId, Integer storeId,
+    public Customer(int customerId, int storeId,
                        String firstName, String lastName,
                        String email, int addressId,
-                       boolean activebool, String createDate,
-                       String lastUpdate, int active) {
+                       boolean activebool, Date createDate,
+                       Timestamp lastUpdate, int active) {
         this.customerId = customerId;
         this.storeId = storeId;
         this.firstName = firstName;
@@ -30,6 +33,7 @@ public class Customer {
         this.lastUpdate = lastUpdate;
         this.active = active;
     }
+
 
     public int getCustomerId() {
         return customerId;
@@ -87,19 +91,19 @@ public class Customer {
         this.activebool = activebool;
     }
 
-    public String getCreateDate() {
+    public Date getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(String createDate) {
+    public void setCreateDate(Date createDate) {
         this.createDate = createDate;
     }
 
-    public String getLastUpdate() {
+    public Timestamp getLastUpdate() {
         return lastUpdate;
     }
 
-    public void setLastUpdate(String lastUpdate) {
+    public void setLastUpdate(Timestamp lastUpdate) {
         this.lastUpdate = lastUpdate;
     }
 
@@ -110,6 +114,20 @@ public class Customer {
     public void setActive(int active) {
         this.active = active;
 
+    }
+    public String toString() {
+        return "Customer{" +
+                "customerId=" + customerId +
+                ", storeId=" + storeId +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", addressId=" + addressId +
+                ", activebool=" + activebool +
+                ", createDate=" + createDate +
+                ", lastUpdate=" + lastUpdate +
+                ", active=" + active +
+                '}';
     }
 }
 

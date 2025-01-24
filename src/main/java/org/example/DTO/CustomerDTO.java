@@ -1,5 +1,8 @@
 package org.example.DTO;
 
+import java.sql.Date;
+import java.sql.Timestamp;
+
 public class CustomerDTO {
     private int customerId;
     private Integer storeId;
@@ -8,16 +11,16 @@ public class CustomerDTO {
     private String email;
     private int addressId;
     private boolean activebool;
-    private String createDate;
-    private String lastUpdate;
+    private Date createDate;
+    private Timestamp lastUpdate;
     private int active;
 
 
     public CustomerDTO(int customerId, Integer storeId,
                        String firstName, String lastName,
                        String email, int addressId,
-                       boolean activebool, String createDate,
-                       String lastUpdate, int active) {
+                       boolean activebool, Date createDate,
+                       Timestamp lastUpdate, int active) {
         this.customerId = customerId;
         this.storeId = storeId;
         this.firstName = firstName;
@@ -28,6 +31,10 @@ public class CustomerDTO {
         this.createDate = createDate;
         this.lastUpdate = lastUpdate;
         this.active = active;
+    }
+
+    public CustomerDTO() {
+
     }
 
     public int getCustomerId() {
@@ -86,19 +93,19 @@ public class CustomerDTO {
         this.activebool = activebool;
     }
 
-    public String getCreateDate() {
+    public Date getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(String createDate) {
+    public void setCreateDate(Date createDate) {
         this.createDate = createDate;
     }
 
-    public String getLastUpdate() {
+    public Timestamp getLastUpdate() {
         return lastUpdate;
     }
 
-    public void setLastUpdate(String lastUpdate) {
+    public void setLastUpdate(Timestamp lastUpdate) {
         this.lastUpdate = lastUpdate;
     }
 
