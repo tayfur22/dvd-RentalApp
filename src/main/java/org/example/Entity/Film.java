@@ -42,6 +42,9 @@ public class Film {
         this.fullText = fullText;
     }
 
+    public Film(int filmId, String title, int stock) {
+    }
+
     public Integer getFilmId() {
         return filmId;
     }

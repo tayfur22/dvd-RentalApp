@@ -26,6 +26,7 @@ public class DBCustomerRepoImpl implements CustomerRepository {
             while (resultSet.next()) {
                 Customer customer = new Customer(
                         resultSet.getInt("customer_id"),
+                        resultSet.getInt("store_id"),
                         resultSet.getString("first_name"),
                         resultSet.getString("last_name"),
                         resultSet.getString("email"),
@@ -33,8 +34,8 @@ public class DBCustomerRepoImpl implements CustomerRepository {
                         resultSet.getBoolean("activebool"),
                         resultSet.getDate("create_date"),
                         resultSet.getTimestamp("last_update"),
-                        resultSet.getInt("active"),
-                        resultSet.getInt("store_id")
+                        resultSet.getInt("active")
+
                 );
                 customers.add(customer);
             }
@@ -92,7 +93,7 @@ public class DBCustomerRepoImpl implements CustomerRepository {
             statement.setTimestamp(7, customer.getLastUpdate());
             statement.setInt(8, customer.getActive());
             statement.setInt(9, customer.getStoreId());
-            statement.setInt(10,customerId);
+            statement.setInt(10, customerId);
 
             statement.executeUpdate();
 
@@ -135,6 +136,7 @@ public class DBCustomerRepoImpl implements CustomerRepository {
 
             while (resultSet.next()) {
                 Customer customer = new Customer(resultSet.getInt("customer_id"),
+                        resultSet.getInt("store_id"),
                         resultSet.getString("first_name"),
                         resultSet.getString("last_name"),
                         resultSet.getString("email"),
@@ -142,14 +144,12 @@ public class DBCustomerRepoImpl implements CustomerRepository {
                         resultSet.getBoolean("activebool"),
                         resultSet.getDate("create_date"),
                         resultSet.getTimestamp("last_update"),
-                        resultSet.getInt("active"),
-                        resultSet.getInt("store_id")
+                        resultSet.getInt("active")
+
                 );
                 customers.add(customer);
 
-
             }
-
 
         } catch (SQLException e) {
             e.printStackTrace();

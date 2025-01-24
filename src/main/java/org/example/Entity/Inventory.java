@@ -1,12 +1,14 @@
 package org.example.Entity;
 
+import java.sql.Timestamp;
+
 public class Inventory {
     private Integer inventoryId;
     private Integer filmId;
     private Integer storeId;
-    private String lastUpdate;
+    private Timestamp lastUpdate;
 
-    public Inventory(Integer inventoryId, Integer filmId, Integer storeId, String lastUpdate) {
+    public Inventory(Integer inventoryId, Integer filmId, Integer storeId, Timestamp lastUpdate) {
         this.inventoryId = inventoryId;
         this.filmId = filmId;
         this.storeId = storeId;
@@ -37,11 +39,11 @@ public class Inventory {
         this.storeId = storeId;
     }
 
-    public String getLastUpdate() {
+    public Timestamp getLastUpdate() {
         return lastUpdate;
     }
 
-    public void setLastUpdate(String lastUpdate) {
+    public void setLastUpdate(Timestamp lastUpdate) {
         this.lastUpdate = lastUpdate;
     }
 

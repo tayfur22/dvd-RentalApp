@@ -5,7 +5,7 @@ import org.example.Entity.Customer;
 
 import java.sql.SQLException;
 
-public class DTOConverter {
+public class CustomerDTOConverter {
 
     public static CustomerDTO toCustomerDTO(Customer customer) throws SQLException{
         CustomerDTO customerDTO = new CustomerDTO();
