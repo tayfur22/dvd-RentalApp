@@ -4,10 +4,7 @@ import org.example.Entity.Film;
 import org.example.Entity.Inventory;
 import org.example.Utils.DBUtils;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -92,9 +89,21 @@ public class DBInventoryRepoImpl implements InventoryRepository {
 
                 int filmId = rs.getInt("film_id");
                 String title = rs.getString("title");
-                int stock = rs.getInt("stock");
+//                String description = rs.getString("description");
+//                int releaseYear = rs.getInt("releaseYear");
+//                int languageId = rs.getInt("languageId");
+//                int rentalDuration = rs.getInt("rentalDuration");
+//                double rentalRate = rs.getDouble("rentalRate");
+//                int length = rs.getInt("length");
+//                double replacementCost = rs.getDouble("replacementCost");
+//                String rating = rs.getString("rating");
+//                String specialFeatures = rs.getString("specialFeatures");
+//                Timestamp lastUpdate = rs.getTimestamp("lastUpdate");
+//                String fullText = rs.getString("fullText");
 
-                films.add(new Film(filmId, title, stock));
+
+
+                films.add(new Film(filmId, title));
             }
 
         } catch (SQLException e) {
@@ -131,8 +140,6 @@ public class DBInventoryRepoImpl implements InventoryRepository {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return 0;
-
     }
 }

@@ -3,19 +3,19 @@ package org.example.Entity;
 import java.sql.Timestamp;
 
 public class Inventory {
-    private Integer inventoryId;
-    private Integer filmId;
-    private Integer storeId;
+    private int inventoryId;
+    private int filmId;
+    private int storeId;
     private Timestamp lastUpdate;
 
-    public Inventory(Integer inventoryId, Integer filmId, Integer storeId, Timestamp lastUpdate) {
+    public Inventory(int inventoryId, int filmId, int storeId, Timestamp lastUpdate) {
         this.inventoryId = inventoryId;
         this.filmId = filmId;
         this.storeId = storeId;
         this.lastUpdate = lastUpdate;
     }
 
-    public Integer getInventoryId() {
+    public int getInventoryId() {
         return inventoryId;
     }
 
@@ -23,7 +23,7 @@ public class Inventory {
         this.inventoryId = inventoryId;
     }
 
-    public Integer getFilmId() {
+    public int getFilmId() {
         return filmId;
     }
 
@@ -31,7 +31,7 @@ public class Inventory {
         this.filmId = filmId;
     }
 
-    public Integer getStoreId() {
+    public int getStoreId() {
         return storeId;
     }
 

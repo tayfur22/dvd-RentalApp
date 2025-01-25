@@ -1,31 +1,34 @@
 package org.example.Entity;
 
+import java.sql.Timestamp;
+
 public class Film {
-    private Integer filmId;
+    private int filmId;
     private String title;
     private String description;
-    private Integer releaseYear;
-    private Integer languageId;
-    private Integer rentalDuration;
-    private Double rentalRate;
-    private Integer length;
-    private Double replacementCost;
+    private int releaseYear;
+    private int languageId;
+    private int rentalDuration;
+    private double rentalRate;
+    private int length;
+    private double replacementCost;
     private String rating;
     private String specialFeatures;
-    private String lastUpdate;
+    private Timestamp lastUpdate;
     private String fullText;
 
-    public Film(Integer filmId, String title,
+
+    public Film(int filmId, String title,
                 String description,
-                Integer releaseYear,
-                Integer languageId,
-                Integer rentalDuration,
-                Double rentalRate,
-                Integer length,
-                Double replacementCost,
+                int releaseYear,
+                int languageId,
+                int rentalDuration,
+                double rentalRate,
+                int length,
+                double replacementCost,
                 String rating,
                 String specialFeatures,
-                String lastUpdate,
+                Timestamp lastUpdate,
                 String fullText) {
         this.filmId = filmId;
         this.title = title;
@@ -40,10 +43,14 @@ public class Film {
         this.specialFeatures = specialFeatures;
         this.lastUpdate = lastUpdate;
         this.fullText = fullText;
+
     }
 
-    public Film(int filmId, String title, int stock) {
+    public Film(int filmId, String title) {
+        this.filmId = filmId;
+        this.title = title;
     }
+
 
     public Integer getFilmId() {
         return filmId;
@@ -133,11 +140,11 @@ public class Film {
         this.specialFeatures = specialFeatures;
     }
 
-    public String getLastUpdate() {
+    public Timestamp getLastUpdate() {
         return lastUpdate;
     }
 
-    public void setLastUpdate(String lastUpdate) {
+    public void setLastUpdate(Timestamp lastUpdate) {
         this.lastUpdate = lastUpdate;
     }
 
@@ -148,5 +155,25 @@ public class Film {
     public void setFullText(String fullText) {
         this.fullText = fullText;
     }
+
+    @Override
+    public String toString() {
+        return "Film {" +
+                "filmId=" + filmId +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", releaseYear=" + releaseYear +
+                ", languageId=" + languageId +
+                ", rentalDuration=" + rentalDuration +
+                ", rentalRate=" + rentalRate +
+                ", length=" + length +
+                ", replacementCost=" + replacementCost +
+                ", rating='" + rating + '\'' +
+                ", specialFeatures='" + specialFeatures + '\'' +
+                ", lastUpdate='" + lastUpdate + '\'' +
+                ", fullText='" + fullText + '\'' +
+                '}';
+    }
+
 }
 

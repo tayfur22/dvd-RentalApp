@@ -1,18 +1,17 @@
 package org.example.Entity;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class Payment {
-    private Integer paymentId;
-    private Integer customerId;
-    private Integer staffId;
-    private Integer rentalId;
-    private Double amount;
-    private String paymentDate;
+    private int paymentId;
+    private int customerId;
+    private int staffId;
+    private int rentalId;
+    private double amount;
+    private Timestamp paymentDate;
 
-    public Payment(Integer paymentId, Integer customerId,
-                   Integer staffId, Integer rentalId,
-                   Double amount, String paymentDate) {
+    public Payment(int paymentId, int customerId, int staffId, int rentalId, double amount, Timestamp paymentDate) {
         this.paymentId = paymentId;
         this.customerId = customerId;
         this.staffId = staffId;
@@ -21,53 +20,64 @@ public class Payment {
         this.paymentDate = paymentDate;
     }
 
-    public Integer getPaymentId() {
+    public int getPaymentId() {
         return paymentId;
     }
 
-    public void setPaymentId(Integer paymentId) {
+    public void setPaymentId(int paymentId) {
         this.paymentId = paymentId;
     }
 
-    public Integer getCustomerId() {
+    public int getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(Integer customerId) {
+    public void setCustomerId(int customerId) {
         this.customerId = customerId;
     }
 
-    public Integer getStaffId() {
+    public int getStaffId() {
         return staffId;
     }
 
-    public void setStaffId(Integer staffId) {
+    public void setStaffId(int staffId) {
         this.staffId = staffId;
     }
 
-    public Integer getRentalId() {
+    public int getRentalId() {
         return rentalId;
     }
 
-    public void setRentalId(Integer rentalId) {
+    public void setRentalId(int rentalId) {
         this.rentalId = rentalId;
     }
 
-    public Double getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 
-    public String getPaymentDate() {
+    public Timestamp getPaymentDate() {
         return paymentDate;
     }
 
-    public void setPaymentDate(String paymentDate) {
+    public void setPaymentDate(Timestamp paymentDate) {
         this.paymentDate = paymentDate;
     }
+
+    @Override
+    public String toString() {
+        return "Payment{" +
+                "paymentId=" + paymentId +
+                ", customerId=" + customerId +
+                ", staffId=" + staffId +
+                ", rentalId=" + rentalId +
+                ", amount=" + amount +
+                ", paymentDate=" + paymentDate +
+                '}';
+    }
+
 }
-
-
