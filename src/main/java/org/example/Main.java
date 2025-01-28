@@ -5,13 +5,11 @@ import org.example.Entity.Customer;
 import org.example.Entity.Film;
 import org.example.Entity.Inventory;
 import org.example.Entity.Payment;
-import org.example.Service.CustomerServices;
+import org.example.Service.*;
 import org.example.Repositories.DBCustomerRepoImpl;
-import org.example.Service.InventoryServices;
-import org.example.Service.PaymentServices;
-import org.example.Service.RentalServices;
 import org.example.Utils.DBUtils;
 
+import java.awt.*;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.List;
@@ -119,25 +117,52 @@ public class Main {
 
         // ------------------------------------------------
         //Payment  Manager
+//
+//        PaymentServices services = new PaymentServices();
+//
+//        Payment payment = new Payment(0,1,1,1,100.50,new Timestamp(System.currentTimeMillis()));
+//        boolean isPaymentAdded = services.addPayment(payment);
+//        System.out.println("Payment added: " + isPaymentAdded);
+//
+//        Timestamp startDate = Timestamp.valueOf("2025-01-01 00:00:00");
+//        Timestamp endDate = Timestamp.valueOf("2025-01-31 23:59:59");
+//
+//        double totalPaymentsInRange = services.getTotalPaymentsByDateRange(startDate,endDate);
+//        System.out.println("Total payments from " + startDate + " to " + endDate + " : " + totalPaymentsInRange);
+//
+//        int customerId = 1;
+//        double totalPaymentsByCustomer = services.getTotalPaymentsByCustomer(customerId);
+//        System.out.println("Total payments by customer with ID: " + totalPaymentsByCustomer);
 
-        PaymentServices services = new PaymentServices();
 
-        Payment payment = new Payment(0,1,1,1,100.50,new Timestamp(System.currentTimeMillis()));
-        boolean isPaymentAdded = services.addPayment(payment);
-        System.out.println("Payment added: " + isPaymentAdded);
+        //get top 10 movies
 
-        Timestamp startDate = Timestamp.valueOf("2025-01-01 00:00:00");
-        Timestamp endDate = Timestamp.valueOf("2025-01-31 23:59:59");
+        ReportServices reportServices = new ReportServices();
 
-        double totalPaymentsInRange = services.getTotalPaymentsByDateRange(startDate,endDate);
-        System.out.println("Total payments from " + startDate + " to " + endDate + " : " + totalPaymentsInRange);
+//        List<String> top10Movies = reportServices.getTop10RentedFilms();
+//
+//        System.out.println("top 10 movies");
+//
+//        for (String movie: top10Movies){
+//            System.out.println(movie);
+//        }
 
-        int customerId = 1;
-        double totalPaymentsByCustomer = services.getTotalPaymentsByCustomer(customerId);
-        System.out.println("Total payments by customer with ID: " + totalPaymentsByCustomer);
+        List<String> monthlyReports = reportServices.getMonthlyRentalsAndRevenue();
+
+//        System.out.println("Show rental and revenue");
+//
+//        for (String show : monthlyReports){
+//            System.out.println(show);
+//        }
+
+        List<String> customerReports = reportServices.getCustomerActivityReport();
 
 
-
+        System.out.println("Customer Activity Report:");
+        System.out.println("----------------------------");
+        for (String report : customerReports) {
+            System.out.println(report);
+        }
     }
 }
 
